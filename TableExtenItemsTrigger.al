@@ -94,10 +94,9 @@ tableextension 50036 ItemExtension extends Item
 
             // Formation du code GTIN final
             "GTIN" := '326231' + CopyStr(varRefArt, 1, 2) + CopyStr(varRefArt, 4, 4) + Format(varClé);
-        end else begin
+        end else
             // Erreur si le caractère '-' n'est pas trouvé dans les 7 premiers caractères
             // Erreur si le format du numéro n'est pas valide.
             Error('Le format du numéro de l''article n''est pas valide. Utilisez le format 00-0000 afin de calculer le GTIN. Le format peut être changé dans la page No. Series (Page=456)');
-        end;
     end;
 }
